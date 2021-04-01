@@ -3,18 +3,24 @@
 	text-align: center;
 }
 
-#overview {
-	float: right;
-	background: red;
-}
-
-#navbar {
+.left-column {
 	float: left;
-	background: green;
+	/*background: green;*/
 }
 
-.chart-container {
-	background: yellow;
+.right-column {
+	/*background: red;*/
+	float: right;
+}
+
+.left-column, .right-column {
+	width: 20%;
+}
+
+.central-column {
+	/*background: yellow;*/
+	width: 60%;
+	display: table;
 }
 
 #navbar > ul, #navbar > ul > li > a {
