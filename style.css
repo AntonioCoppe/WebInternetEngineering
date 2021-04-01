@@ -1,0 +1,37 @@
+#header {
+	font-size: 48px;
+	text-align: center;
+}
+
+#overview {
+	float: right;
+	background: red;
+}
+
+#navbar {
+	float: left;
+	background: green;
+}
+
+.chart-container {
+	background: yellow;
+}
+
+#navbar > ul, #navbar > ul > li > a {
+	list-style: none;
+	text-decoration: none;
+	color: black;
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+}
+
+#portfolio {
+	bottom: 20px;
+	position: fixed;
+	text-align: center;
+}

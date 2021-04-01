@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Chart CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="lib/c3/c3.css" rel="stylesheet">
 
 	<!-- Library to manage chart data -->
@@ -16,31 +17,84 @@
 	<script src="lib/c3/c3.min.js"></script>
 	<title>Title</title>
 </head>
+
 <body>
 	<header id="header">
-		Website header
+		Website Title
 	</header>
-	<nav>
+
+	<nav id="navbar">
 		<ul>
-			<li><a href="" title="">Homepage</a></li>
-			<li><a href="" title="">Contacts</a></li>
+			<li><a href="">Menu</a></li>
+			<li><a href="">Add stock</a></li>
+			<li><a href="">Settings</a></li>
+			<li><a href="">Help</a></li>
 		</ul>
 	</nav>
 
-	<div id="chart"></div>
 
-	<section id="partnerlogos">
-		<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.GGVWmsJ3O4YlnlBP9IEWigHaCu%26pid%3DApi&f=1" />
-	</section>
+	<div class="chart-container">
+		<div id="chart"></div>
+	</div>
+
+	<table id="overview">
+		<caption>Overview</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Shares</th>
+				<th>$$$</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Apple</td>
+				<td>8931</td>
+				<td>9432943 $</td>
+			</tr>
+			<tr>
+				<td>Microsoft</td>
+				<td>8931</td>
+				<td>9432943 $</td>
+			</tr>
+			<tr>
+				<td>Google</td>
+				<td>8931</td>
+				<td>9432943 $</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+	<div id="portfolio">
+		<table>
+			<thead>
+				<tr>
+					<th>Your portfolio</th>
+					<th>Capital gain</th>
+					<th>Dividends</th>
+					<th>Concurrency gains</th>
+					<th>Total return</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>data</td>
+					<td>data</td>
+					<td>data</td>
+					<td>data</td>
+					<td>data</td>
+				</tr>
+			</tbody>
+		</table>		
+	</div>
+
+	<footer>
+		© Angelone Alessandro & Coppe Antonio
+	</footer>
 </body>
 </html>
-
-
-<style type="text/css" media="screen">
-	#header {
-		font-size: 24px;
-	}
-</style>
 
 <script>
 
