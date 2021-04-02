@@ -38,6 +38,6 @@ footer {
 
 #portfolio {
 	bottom: 20px;
-	position: fixed;
+	margin: 0 auto;
 	text-align: center;
 }
