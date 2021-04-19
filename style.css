@@ -5,11 +5,9 @@
 
 .left-column {
 	float: left;
-	/*background: green;*/
 }
 
 .right-column {
-	/*background: red;*/
 	float: right;
 }
 
@@ -18,9 +16,14 @@
 }
 
 .central-column {
-	/*background: yellow;*/
 	width: 60%;
 	display: table;
+}
+
+#navbar {
+	border-bottom-style: dashed;
+	border-bottom-width: 1px;
+	height: 100%;
 }
 
 #navbar > ul, #navbar > ul > li > a {
@@ -42,12 +45,6 @@ footer {
 	text-align: center;
 }
 
-.app-preview {
-	display: flex;
-	justify-content: center;
-	list-style: none;
-}
-
 section > table {
 	text-align: center;
 	margin-left: auto;
@@ -67,4 +64,13 @@ body {
 	background-color: #263238;
 	color: #AEC7D1;
 	font-family: 'Work Sans', sans-serif;
+}
+
+.nav-pills > li > a {
+	color: #AEC7D1;
+}
+
+.nav-pills > li > a:hover, .nav-pills > li > a:focus-within {
+	background-color: inherit;
+	color: white;
 }
