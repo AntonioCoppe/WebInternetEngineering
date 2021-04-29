@@ -1,64 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="description" content="Landing page">
-	<meta name="keywords" content="HTML, CSS, JavaScript">
-	<meta name="author" content="Angelone Alessandro & Coppe Antonio">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet"> 
-	<title>FinPlatform</title>
-</head>
-<body>
-	<header id="header">
-		FinPlatform
-	</header>
+<html lang="en">
+	<head>
+		<title>FinPlatform</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Landing page">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Angelone Alessandro & Coppe Antonio">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<section class="left-column landing-page">
-		<h1>What do we do</h1>
-		<p>This website is used to keep track of personal stock investments. Through this simple user interface, it is possible to add/ remove stocks and keep track of returns from single stocks and an asset of stocks. There is the possibility of looking at returns in different time frames and grouping them by different markets, sectors, currency, country, and investment type.</p>
-	</section>
 
-	<section class="right-column landing-page">
-		<h1>Our team</h1>
-		<ul>
-			<li>Angelone Alessandro</li>
-			<li>Coppe Antonio</li>
-		</ul>
-	</section>
+		<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
 
-	<section class="central-column landing-page">
-		<h1>Technologies involved</h1>
-		<ul>
-			<li>HTML5</li>
-			<li>CSS3</li>
-			<li>JavaScript</li>
-			<li>PHP or Ruby on Rails for backend</li>
-			<li>Python to fetch and manage data from external sources</li>
-			<li>SQL</li>
-		</ul>
-	</section>
+	<body>
+		<div class="container-narrow">
+			<div class="masthead">
+				<ul class="nav nav-pills pull-right">
+					<li><a href="homepage.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="">Contact</a></li>
+					<li><a href="login.html" id="login-button">Login</a></li>
+				</ul>
+				<a href="homepage.html"><h3 class="muted">FinPlatform</h3></a>
+			</div>
 
-	<section>
-		<h1>Why us?</h1>
-		<table>
-			<tr>
-				<td>Is better than existing alternatives</td>
-				<td>We provide a simple UI to solve a complex task</td>
-				<td>Ability to control all your investments from one single platform</td>
-			</tr>
-			<tr>
-				<td>Manage your crypto-assets</td>
-				<td>We provide a simple but powerful graph that can<br> help you to visualize your compound interest</td>
-				<td>Calculate your capital-gain taxes!</td>
-			</tr>
-		</table>
-	</section>
+			<hr>
 
-	<footer>
-		© Angelone Alessandro & Coppe Antonio
-	</footer>
-</body>
+			<div class="row-fluid marketing">
+				<section class="span4">
+					<h3>What do we do</h3>
+					<p>This website is used to keep track of personal stock investments. Through this simple user interface, it is possible to add/ remove stocks and keep track of returns from single stocks and an asset of stocks. There is the possibility of looking at returns in different time frames and grouping them by different markets, sectors, currency, country, and investment type.</p>
+				</section>
+
+				<section class="span4">
+					<h3>Manage your crypto-assets</h3>
+					<ul>
+						<li>HTML5</li>
+						<li>CSS3</li>
+						<li>JavaScript</li>
+						<li>PHP or Ruby on Rails for backend</li>
+						<li>Python to fetch and manage data from external sources</li>
+						<li>SQL</li>
+					</ul>
+				</section>
+
+				<section class="span4">
+					<h3>Our team</h3>
+					<ul>
+						<li>Angelone Alessandro</li>
+						<li>Coppe Antonio</li>
+					</ul>
+				</section>
+			</div>
+
+			<hr>
+
+			<div class="row-fluid">
+				<h3>Why us?</h3>
+				<section class="row-fluid">
+					<ul class="span6">
+						<li>Is better than existing alternatives</li>
+						<li>We provide a simple UI to solve a complex task</li>
+						<li>Ability to control all your investments from one single platform</li>
+					</ul>
+					<ul class="span6">
+						<li>Manage your crypto-assets</li>
+						<li>We provide a simple but powerful graph that can help you to visualize your compound interest</li>
+						<li>Calculate your capital-gain taxes!</li>
+					</ul>
+				</section>
+			</div>
+
+			<hr> 
+
+			<footer>
+				<p>&copy; Company 2021</p>
+			</footer>
+
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	</body>
 </html>

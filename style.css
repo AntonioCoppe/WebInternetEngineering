@@ -1,47 +1,6 @@
-#header {
-	font-size: 48px;
-	text-align: center;
-}
-
-.left-column {
-	float: left;
-}
-
-.right-column {
-	float: right;
-}
-
-.left-column, .right-column {
-	width: 20%;
-}
-
-.central-column {
-	width: 60%;
-	display: table;
-}
-
-#navbar {
-	border-bottom-style: dashed;
-	border-bottom-width: 1px;
-	height: 100%;
-}
-
-#navbar > ul, #navbar > ul > li > a {
-	list-style: none;
-	text-decoration: none;
-	color: inherit;
-}
-
 footer {
-	position: fixed;
 	width: 100%;
 	bottom: 0;
-	text-align: center;
-}
-
-#portfolio {
-	bottom: 20px;
-	margin: 0 auto;
 	text-align: center;
 }
 
@@ -51,13 +10,45 @@ section > table {
 	margin-right: auto;
 }
 
-.landing-page {
-	width: 33%;
-	text-align: justify;
+/* . */
+body {
+	padding-top: 20px;
+	padding-bottom: 40px;
 }
 
-.landing-page > h1 {
+/* Custom container */
+.container-narrow {
+	margin: 0 auto;
+	max-width: 700px;
+}
+.container-narrow > hr {
+	margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+	margin: 60px 0;
 	text-align: center;
+}
+.jumbotron h1 {
+	font-size: 72px;
+	line-height: 1;
+}
+.jumbotron .btn {
+	font-size: 21px;
+	padding: 14px 24px;
+}
+
+.sidebar .nav-link {
+	color: white !important;
+}
+
+/* Supporting marketing content */
+.marketing {
+	margin: 60px 0;
+}
+.marketing p + h4 {
+	margin-top: 28px;
 }
 
 body {
