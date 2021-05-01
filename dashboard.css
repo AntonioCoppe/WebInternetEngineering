@@ -14,6 +14,7 @@
 
 body {
 	font-size: .875rem;
+	color: white;
 }
 
 .feather {
@@ -53,7 +54,7 @@ body {
 
 .sidebar .nav-link {
 	font-weight: 500;
-	color: #333;
+	color: #D9D9D9;
 }
 
 .sidebar .nav-link .feather {
