@@ -1,7 +1,12 @@
-footer {
+footer, .footer {
 	width: 100%;
 	bottom: 0;
 	text-align: center;
+}
+
+hr {
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #ffffff;
 }
 
 section > table {
