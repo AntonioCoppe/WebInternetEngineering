@@ -2,18 +2,16 @@
 	ob_start();
 	session_start();
 
-	// if (isset($_SESSION['valid']) and isset($_SESSION['username']) and $_SESSION['valid'])
-	// 	header('Location: dashboard.html')
-	// else
-
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if (isset($_SESSION['user']))
+		header('Location: dashboard.html');
+	elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once('config.php');
-		$db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWD, DB_NAME) or die('DB connection failed');
 		$user = mysqli_real_escape_string($db, $_POST['email']);
 		$pwd = mysqli_real_escape_string($db, $_POST['password']);
 		$res = $db->query("SELECT email FROM Users WHERE email = '$user' AND password = '$pwd'");
 		$row = $res->fetch_array();
 		if ($res->num_rows == 1) {
+			$_SESSION['user'] = $user;
 			header('Location: dashboard.html');
 			die();
 		} else
@@ -70,7 +68,9 @@
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
 		</form>
-		<p class="mt-5 mb-3 text-muted">&copy; Angelone & Coppe 2021</p>
 	</main>
+	<footer>
+		&copy; Angelone & Coppe 2021
+	</footer>
 </body>
 </html>

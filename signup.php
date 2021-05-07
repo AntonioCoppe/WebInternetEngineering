@@ -1,3 +1,24 @@
+<?php
+	ob_start();
+	session_start();
+
+	if (isset($_SESSION['user']))
+		header('Location: dashboard.html');
+
+	elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		require_once('config.php');
+		$stmt = $db->prepare("INSERT INTO Users VALUES (?, ?)");
+
+		$name = mysqli_real_escape_string($db, $_POST['name']);
+		$surname = mysqli_real_escape_string($db, $_POST['surname']);
+		$user = mysqli_real_escape_string($db, $_POST['email']);
+		$pwd = mysqli_real_escape_string($db, $_POST['password']);
+
+		$stmt->bind_param('ss', $user, $pwd);
+		if (! $stmt->execute())
+			$_GET['ue'] = true;
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,30 +45,36 @@
 		<hr>
 	</div>
 	<main class="text-center form-signin">
-		<form>
-			<img class="mb-4" src="img/login-logo-res.png" alt="Logo">
-			<h1 class="h3 mb-3 fw-normal">Register now!</h1>
+		<img class="mb-4" src="img/login-logo-res.png" alt="Logo">
+		<h1 class="h3 mb-3 fw-normal">Register now!</h1>
 
+		<?php
+			if ($_GET['ue'])
+				echo "<div class=\"alert alert-danger\">User '$user' already exists.</div>";
+		?>
+		<form action="signup.php" method="POST" accept-charset="utf-8">
 			<div class="form-floating">
-				<input type="text" class="form-control" id="floatingName" placeholder="Mario">
+				<input type="text" class="form-control" name="name" id="floatingName" placeholder="Mario">
 				<label for="floatingName">Name</label>
 			</div>
 			<div class="form-floating">
-				<input type="text" class="form-control" id="floatingSurname" placeholder="Rossi">
+				<input type="text" class="form-control" name="surname" id="floatingSurname" placeholder="Rossi">
 				<label for="floatingSurname">Surname</label>
 			</div>
 			<div class="form-floating">
-				<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
 				<label for="floatingInput">Email address</label>
 			</div>
 			<div class="form-floating">
-				<input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+				<input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
 				<label for="floatingPassword">Password</label>
 			</div>
 
 			<button class="w-100 btn btn-lg btn-success" type="submit">Sign in</button>
-			<p class="mt-5 mb-3 text-muted">&copy; Angelone & Coppe 2021</p>
 		</form>
 	</main>
+	<footer>
+		&copy; Angelone & Coppe 2021
+	</footer>
 </body>
 </html>
