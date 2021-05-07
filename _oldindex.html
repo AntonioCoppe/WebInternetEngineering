@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Free Web tutorials">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="John Doe">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Chart CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="lib/c3/c3.css" rel="stylesheet">
+
+	<!-- Library to manage chart data -->
+	<script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+	<!-- Chart library -->
+	<script src="lib/c3/c3.min.js"></script>
+	<title>FinPlatform</title>
+</head>
+
+<body>
+	<style>
+		#header {
+			font-size: 48px;
+			text-align: center;
+		}
+
+		.left-column {
+			float: left;
+		}
+
+		.right-column {
+			float: right;
+		}
+
+		.left-column, .right-column {
+			width: 20%;
+		}
+
+		.central-column {
+			width: 60%;
+			display: table;
+		}
+
+		#navbar {
+			border-bottom-style: dashed;
+			border-bottom-width: 1px;
+			height: 100%;
+		}
+
+		#navbar > ul, #navbar > ul > li > a {
+			list-style: none;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		#portfolio {
+			bottom: 20px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		section > table {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+	<header id="header">
+		FinPlatform
+	</header>
+
+	<main>
+		<nav class="left-column" id="navbar">
+			<ul>
+				<li><a href="">Menu</a></li>
+				<li><a href="">Add stock</a></li>
+				<li><a href="">Settings</a></li>
+				<li><a href="">Help</a></li>
+			</ul>
+		</nav>
+
+		<div class="right-column" id="overview">
+			<table>
+				<caption>Overview</caption>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Shares</th>
+						<th>$$$</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Apple</td>
+						<td>8931</td>
+						<td>9432943 $</td>
+					</tr>
+					<tr>
+						<td>Microsoft</td>
+						<td>8931</td>
+						<td>9432943 $</td>
+					</tr>
+					<tr>
+						<td>Google</td>
+						<td>8931</td>
+						<td>9432943 $</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="central-column chart-container">
+			<div id="chart"></div>
+		</div>
+		<table id="portfolio">
+			<thead>
+				<tr>
+					<th>Your portfolio</th>
+					<th>Capital gain</th>
+					<th>Dividends</th>
+					<th>Concurrency gains</th>
+					<th>Total return</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>data</td>
+					<td>data</td>
+					<td>data</td>
+					<td>data</td>
+					<td>data</td>
+				</tr>
+			</tbody>
+		</table>	
+	</main>
+
+	<footer>
+		© Angelone Alessandro & Coppe Antonio
+	</footer>
+</body>
+</html>
+
+<script>
+
+	var chart = c3.generate({
+		bindto: '#chart',
+		data: {
+			columns: [
+				['data1', 30, 200, 100, 400, 150, 250],
+				['data2', 50, 20, 10, 40, 15, 25]
+			]
+		}
+	});
+
+</script>
