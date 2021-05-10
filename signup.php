@@ -7,16 +7,28 @@
 
 	elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once('config.php');
-		$stmt = $db->prepare("INSERT INTO Users VALUES (?, ?)");
+		$stmt = $db->prepare("INSERT INTO Users VALUES (?, ?, ?, ?)");
 
 		$name = mysqli_real_escape_string($db, $_POST['name']);
 		$surname = mysqli_real_escape_string($db, $_POST['surname']);
 		$user = mysqli_real_escape_string($db, $_POST['email']);
 		$pwd = mysqli_real_escape_string($db, $_POST['password']);
 
-		$stmt->bind_param('ss', $user, $pwd);
-		if (! $stmt->execute())
-			$_GET['ue'] = true;
+		if (empty($name))
+			$_GET['mn'] = true;
+
+		if (empty($surname))
+			$_GET['ms'] = true;
+
+		if (! $_GET['mn'] and ! $_GET['ms']) {
+			$stmt->bind_param('ssss', $user, $pwd, $name, $surname);
+			if (! $stmt->execute())
+				$_GET['ue'] = true;
+			else {
+				$_SESSION['user'] = $user;
+				header('Location: dashboard.html');
+			}
+		}	
 	}
 ?>
 <!DOCTYPE html>
@@ -51,15 +63,21 @@
 		<?php
 			if ($_GET['ue'])
 				echo "<div class=\"alert alert-danger\">User '$user' already exists.</div>";
+			else {
+				if ($_GET['mn'])
+					echo "<div class=\"alert alert-danger\">Name is missing.</div>";
+				if ($_GET['ms'])
+					echo "<div class=\"alert alert-danger\">Surname is missing.</div>";
+			}
 		?>
 		<form action="signup.php" method="POST" accept-charset="utf-8">
 			<div class="form-floating">
-				<input type="text" class="form-control" name="name" id="floatingName" placeholder="Mario">
-				<label for="floatingName">Name</label>
+				<input type="text" class="form-control" name="name" id="nameInputForm" placeholder="Mario" required>
+				<label for="nameInputForm">Name</label>
 			</div>
 			<div class="form-floating">
-				<input type="text" class="form-control" name="surname" id="floatingSurname" placeholder="Rossi">
-				<label for="floatingSurname">Surname</label>
+				<input type="text" class="form-control" name="surname" id="surnameInputForm" placeholder="Rossi" required>
+				<label for="surnameInputForm">Surname</label>
 			</div>
 			<div class="form-floating">
 				<input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
