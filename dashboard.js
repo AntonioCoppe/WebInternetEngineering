@@ -32,9 +32,9 @@
 			],
 			lineTension: 0,
 			backgroundColor: 'transparent',
-			borderColor: '#007bff',
-			borderWidth: 4,
-			pointBackgroundColor: '#007bff'
+			borderColor: "#D9D9D9",
+   		pointBackgroundColor: "#D9D9D9",
+   		pointBorderColor: "#D9D9D9",
 		}]
 	},
 	options: {
